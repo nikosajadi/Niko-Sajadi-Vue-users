@@ -2,6 +2,7 @@
 import axios from 'axios';
 
 export default {
+  name: 'App',
   data() {
     return {
       users: []
@@ -23,33 +24,31 @@ export default {
 };
 </script>
 
-
 <template>
-    <div>
+    <div id="app">
       <h1>Users List</h1>
       <table>
         <thead>
           <tr>
             <th>ID</th>
-            <th>Email</th>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Email</th>
             <th>Avatar</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="user in users" :key="user.id">
             <td>{{ user.id }}</td>
-            <td>{{ user.email }}</td>
             <td>{{ user.first_name }}</td>
             <td>{{ user.last_name }}</td>
-            <td><img :src="user.avatar" alt="User Avatar" /></td>
+            <td>{{ user.email }}</td>
+            <td><img :src="user.avatar" :alt="user.first_name" class="avatar"></td>
           </tr>
         </tbody>
       </table>
     </div>
   </template>
-  
  
   
   <style>
@@ -71,5 +70,10 @@ export default {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+  }
+  .avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
   }
   </style>
