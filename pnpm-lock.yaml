@@ -30,6 +30,9 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
         version: 5.0.5(vite@5.2.12(@types/node@20.13.0))(vue@3.4.27(typescript@5.4.5))
+      '@vue/compiler-sfc':
+        specifier: ^3.4.27
+        version: 3.4.27
       '@vue/eslint-config-prettier':
         specifier: ^9.0.0
         version: 9.0.0(eslint@8.57.0)(prettier@3.3.0)
