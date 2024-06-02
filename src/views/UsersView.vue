@@ -40,8 +40,10 @@ export default {
         <tbody>
           <tr v-for="user in users" :key="user.id">
             <td>{{ user.id }}</td>
-            <td>{{ user.first_name }}</td>
-            <td>{{ user.last_name }}</td>
+            <td>{{ user.first_name }} {{ user.last_name }}
+            <a :href="'mailto:' + user.email">(Contact)</a>
+            </td>
+            <td></td>
             <td>{{ user.email }}</td>
             <td><img :src="user.avatar" :alt="user.first_name" class="avatar"></td>
           </tr>
@@ -76,4 +78,14 @@ export default {
     width: 50px;
     height: 50px;
   }
+
+  .a {
+margin-left: 10px;
+color: #007bff  ;
+text-decoration: none;
+  }
+  a:hover {
+  text-decoration: underline;
+}
+
   </style>
