@@ -1,28 +1,34 @@
 <script>
-import axios from 'axios'
+import axios from 'axios' // Import axios for making HTTP requests
 
 export default {
-  name: 'App',
+  name: 'App', // Name of the component
   data() {
     return {
-      users: [],
+      users: [], // Array to store user data
       page: 1,
       totalPages: 2 // Total pages set to 2 as per your requirement
     }
   },
   created() {
+    // Fetch users when the component is created
     this.fetchUsers()
   },
   methods: {
+    // Method to fetch users from the API
     async fetchUsers() {
       try {
+        // Make a GET request to the API with the current page number
+
         const response = await axios.get(`https://reqres.in/api/users?page=${this.page}`)
         this.users = response.data.data
         this.totalPages = response.data.total_pages // Update totalPages dynamically
       } catch (error) {
+        // Log any errors that occur during the request
         console.error('Error fetching users:', error)
       }
     },
+    // Method to go to the next page
     nextPage() {
       if (this.page < this.totalPages) {
         this.page++
@@ -32,7 +38,7 @@ export default {
     prevPage() {
       if (this.page > 1) {
         this.page--
-        this.fetchUsers()
+        this.fetchUsers() // Fetch users for the new page
       }
     }
   }
@@ -52,6 +58,7 @@ export default {
           </tr>
         </thead>
         <tbody>
+          <!-- Iterate over users array to create table rows -->
           <tr
             v-for="user in users"
             :key="user.id"
@@ -60,10 +67,13 @@ export default {
             <td class="px-4 py-2 border-b">{{ user.id }}</td>
             <td class="px-4 py-2 border-b">
               {{ user.first_name }} {{ user.last_name }}
+
+              <!-- Email link for contacting the user -->
               <a :href="'mailto:' + user.email" class="text-blue-500 ml-2">(Contact)</a>
             </td>
             <td class="px-4 py-2 border-b">{{ user.email }}</td>
             <td class="px-4 py-2 border-b">
+              <!-- Display user avatar -->
               <img :src="user.avatar" :alt="user.first_name" class="avatar" />
             </td>
           </tr>
@@ -71,6 +81,7 @@ export default {
       </table>
     </div>
     <div class="flex justify-between mt-4">
+      <!-- Button to go to the previous page, disabled if on the first page -->
       <button
         @click="prevPage"
         :disabled="page === 1"
