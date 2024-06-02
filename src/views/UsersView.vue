@@ -52,7 +52,11 @@ export default {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="user in users" :key="user.id" class="hover:bg-gray-100">
+          <tr
+            v-for="user in users"
+            :key="user.id"
+            class="hover:bg-gray-100 odd:bg-gray-100 even:bg-white"
+          >
             <td class="px-4 py-2 border-b">{{ user.id }}</td>
             <td class="px-4 py-2 border-b">
               {{ user.first_name }} {{ user.last_name }}
