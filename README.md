@@ -1,18 +1,25 @@
-#  Niko-Sajadi-Vue-users
+# Vue Users Application
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a **Vue.js** application designed to manage user data efficiently. It uses **Vite** for fast development and **Tailwind CSS** for modern, responsive styling.
 
-## Recommended IDE Setup
+## Features
+- Display user data in an organized and interactive interface.
+- Add, update, and delete users.
+- Built with **Vue 3** and **TypeScript** for a robust development experience.
+- Styled with **Tailwind CSS** for responsive design.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Technology Stack
+- **Vue.js 3**: Progressive JavaScript framework.
+- **Vite**: Fast build tool for Vue.js projects.
+- **TypeScript**: For type-safe development.
+- **Tailwind CSS**: Utility-first CSS framework.
 
-## Type Support for `.vue` Imports in TS
+## How to Run the Project
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/Niko-Sajadi-Vue-users.git
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
